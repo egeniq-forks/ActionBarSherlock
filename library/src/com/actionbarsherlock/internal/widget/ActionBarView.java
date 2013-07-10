@@ -545,6 +545,10 @@ public class ActionBarView extends AbsActionBarView {
             item.collapseActionView();
         }
     }
+	   
+	public void setHomeButtonContentDescription(int contentResId) {
+		mHomeLayout.setContentDescription(mContext.getResources().getText(contentResId));
+	}
 
     public void setCustomNavigationView(View view) {
         final boolean showCustom = (mDisplayOptions & ActionBar.DISPLAY_SHOW_CUSTOM) != 0;
