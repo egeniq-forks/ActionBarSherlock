@@ -17,9 +17,6 @@
 
 package com.actionbarsherlock.app;
 
-import com.actionbarsherlock.R;
-import com.actionbarsherlock.view.MenuItem;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -33,6 +30,9 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
+
+import com.actionbarsherlock.R;
+import com.actionbarsherlock.view.MenuItem;
 
 /**
  * This class provides a handy way to tie together the functionality of
@@ -109,7 +109,7 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
         mSlider = new SlideDrawable(mDrawerImage);
         mSlider.setOffsetBy(1.f / 3);
     }
-    
+
 	private Drawable getThemeUpIndicator() {
         final TypedArray a = mContext.obtainStyledAttributes(THEME_ATTRS);
         final Drawable result = a.getDrawable(0);
@@ -158,7 +158,7 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
                         mOpenDrawerContentDescRes : mCloseDrawerContentDescRes);
             } else {
             	mActionBar.setHomeAsUpIndicator(mThemeImage);
-            	mActionBar.setHomeActionContentDescription(0);
+                mActionBar.setHomeActionContentDescription(R.string.abs__action_bar_up_description);
             }
             mDrawerIndicatorEnabled = enable;
         }
@@ -259,7 +259,7 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
      * {@link DrawerLayout.DrawerListener} callback method. If you do not use your
      * ActionBarDrawerToggle instance directly as your DrawerLayout's listener, you should call
      * through to this method from your own listener object.
-     * 
+     *
      * @param newState The new drawer motion state
      */
     @Override
